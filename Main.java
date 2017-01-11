@@ -11,28 +11,27 @@ public class Main {
 
 		JFrame fenetre = new JFrame();
 		String[] tab = {"Select Theme", "Theme Mario", "Theme StarWars"};
-		JLabel theme = new JLabel("Thème :");
+		JLabel theme = new JLabel("ThÃ¨me :");
 		JComboBox select = new JComboBox(tab);
 		select.setEditable(true);
 		JLabel bouton = new JLabel("Bouton :");
-		JButton lol;
 		JButton field = new JButton();
 		MarioTheme mt = new MarioTheme();
 		StarWarsTheme swt = new StarWarsTheme();
-		//Définit un titre pour notre fenêtre
+		//DÃ©finit un titre pour notre fenÃªtre
 	    fenetre.setTitle("Choisir son theme");
-	    //Définit sa taille : 500 pixels de large et 300 pixels de haut
+	    //DÃ©finit sa taille : 500 pixels de large et 300 pixels de haut
 	    fenetre.setSize(500, 300);
-	    //Nous demandons maintenant à notre objet de se positionner au centre
+	    //Nous demandons maintenant Ã  notre objet de se positionner au centre
 	    //Termine le processus lorsqu'on clique sur la croix rouge
 	    fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    //Instanciation d'un objet JPanel
 	    JPanel pan = new JPanel();
-	    //Définition de sa couleur de fond
+	    //DÃ©finition de sa couleur de fond
 	    pan.setBackground(Color.ORANGE);        
-	    //On prévient notre JFrame que notre JPanel sera son content pane
+	    //On prÃ©vient notre JFrame que notre JPanel sera son content pane
 	    fenetre.setContentPane(pan);
-	    //Ajout du bouton à notre content pane
+	    //Ajout du bouton Ã  notre content pane
 	    fenetre.setContentPane(pan);
 	    pan.add(theme);
 	    pan.add(select);
@@ -44,8 +43,12 @@ public class Main {
 				Object selected = select.getSelectedItem();
 				if(selected.toString().equals("Theme Mario"))
 					field.equals(mt.createButton("Theme Mario"));
+					pan.remove(field);
+					pan.add(field);
 				else if(selected.toString().equals("Theme StarWars"))
-	            	field.equals(swt.createButton("Theme StarWars"));
+	            			field.equals(swt.createButton("Theme StarWars"));
+					pan.remove(field);
+					pan.add(field);
 	        }
 	    });
 	    fenetre.getContentPane().add(field);
