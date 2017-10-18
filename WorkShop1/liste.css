@@ -1,0 +1,19 @@
+body
+{
+    background-image: url(clop.jpg);
+}
+table
+{
+    margin: auto;
+    width: 40%;
+}
+caption
+{
+    font-size: 30px;
+    font-weight: bold;
+}
+td /* Toutes les cellules des tableaux... */
+{
+    border: 1px solid black; /* auront une bordure de 1px */
+    text-align: center;
+}
